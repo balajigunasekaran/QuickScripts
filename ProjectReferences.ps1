@@ -1,7 +1,7 @@
-# param(
-#     [Parameter(Mandatory = $true)][string]$path
-# )
-$path = "C:\Workspace\Source\ReadyNetworks_Portal\Source\Connect"
+param(
+    [Parameter(Mandatory = $true)][string]$path
+)
+
 $projectFiles = Get-ChildItem $path -Filter *.csproj -Recurse
     
 $projectFiles | ForEach-Object {
