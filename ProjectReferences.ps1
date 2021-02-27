@@ -1,7 +1,7 @@
-param(
-    [Parameter(Mandatory = $true)][string]$path
-)
-
+# param(
+#     [Parameter(Mandatory = $true)][string]$path
+# )
+$path = "C:\Workspace\Source\ReadyNetworks_Portal\Source\Connect"
 $projectFiles = Get-ChildItem $path -Filter *.csproj -Recurse
     
 $projectFiles | ForEach-Object {
@@ -9,11 +9,11 @@ $projectFiles | ForEach-Object {
     $projectName = $_ | Select-Object -ExpandProperty BaseName
     $projectXml = [xml](Get-Content $projectFile)
 
-    $projectReferences = $projectXml | Select-Xml '//ProjectReference' | Select-Object -ExpandProperty Node
+    $projectReferences = $projectXml | Select-Xml '//ProjectReference'
 
     if ($projectReferences.Count -gt 0) {
         $projectReferences | ForEach-Object {
-            "[" + $projectName + "] -> [" + $_.Include + "]"
+            "[" + $projectName + "] -> [" + $_.Node.Include + "]"
         }    
     }
     else {
