@@ -1,5 +1,5 @@
 ### ProjectReferences.ps1
-Searches all csproj files and prints all project references
+Recursivelly finds *.csproj files and prints all project references
 
 ```sh
 .\ProjectReferences.ps1 -path C:\Source\Git\ProjectA
