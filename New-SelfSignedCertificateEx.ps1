@@ -1,4 +1,5 @@
 <#
+     https://gist.github.com/ignas-sakalauskas/28dd064019f7d0797d90d5d7e74343ea#file-copysslcerttotrustedroot-ps1
      Content from https://www.powershellgallery.com/packages/MiniLab/1.0.1/Content/Public%5CNew-SelfSignedCertificateEx.ps1
     .Synopsis
         This cmdlet generates a self-signed certificate.
